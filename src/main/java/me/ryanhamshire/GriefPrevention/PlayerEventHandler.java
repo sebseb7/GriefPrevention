@@ -1705,6 +1705,17 @@ class PlayerEventHandler implements Listener
                                 clickedBlockType == Material.SWEET_BERRY_BUSH
                         )))
         {
+            if(
+                (clickedBlock.getRelative(0,-1,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,-1,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,1,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,1,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(1,0,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,0,1).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,0,-1).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,0,1).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,0,-1).getType() == Material.PURPLE_CONCRETE)
+            ){
+                return;
+            }
+
             if (playerData == null) playerData = this.dataStore.getPlayerData(player.getUniqueId());
 
             //block container use while under siege, so players can't hide items from attackers
@@ -1760,6 +1771,16 @@ class PlayerEventHandler implements Listener
 
                 instance.config_claims_lockFenceGates && Tag.FENCE_GATES.isTagged(clickedBlockType)))
         {
+            if(
+                (clickedBlock.getRelative(0,-1,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,-1,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,1,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,1,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(1,0,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,0,1).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,0,-1).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,0,1).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,0,-1).getType() == Material.PURPLE_CONCRETE)
+            ){
+                return;
+            }
             if (playerData == null) playerData = this.dataStore.getPlayerData(player.getUniqueId());
             Claim claim = this.dataStore.getClaimAt(clickedBlock.getLocation(), false, playerData.lastClaim);
             if (claim != null)
@@ -1779,6 +1800,16 @@ class PlayerEventHandler implements Listener
         //otherwise apply rules for buttons and switches
         else if (clickedBlock != null && instance.config_claims_preventButtonsSwitches && (Tag.BUTTONS.isTagged(clickedBlockType) || clickedBlockType == Material.LEVER))
         {
+            if(
+                (clickedBlock.getRelative(0,-1,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,-1,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,1,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,1,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(1,0,0).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,0,1).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,0,-1).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(-1,0,0).getType() == Material.PURPLE_CONCRETE)||
+                (clickedBlock.getRelative(0,0,1).getType() == Material.PURPLE_STAINED_GLASS)||(clickedBlock.getRelative(0,0,-1).getType() == Material.PURPLE_CONCRETE)
+            ){
+                return;
+            }
             if (playerData == null) playerData = this.dataStore.getPlayerData(player.getUniqueId());
             Claim claim = this.dataStore.getClaimAt(clickedBlock.getLocation(), false, playerData.lastClaim);
             if (claim != null)

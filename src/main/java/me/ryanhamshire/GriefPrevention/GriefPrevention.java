@@ -3501,6 +3501,31 @@ public class GriefPrevention extends JavaPlugin
             //cache the claim for later reference
             playerData.lastClaim = claim;
             Block block = location.getBlock();
+		
+			if(block.getRelative(0,-1,0).getType() == Material.PURPLE_STAINED_GLASS){
+				if(
+					material == Material.SHULKER_BOX
+					| material == Material.WHITE_SHULKER_BOX
+					| material == Material.ORANGE_SHULKER_BOX
+					| material == Material.MAGENTA_SHULKER_BOX
+					| material == Material.LIGHT_BLUE_SHULKER_BOX
+					| material == Material.YELLOW_SHULKER_BOX
+					| material == Material.LIME_SHULKER_BOX
+					| material == Material.PINK_SHULKER_BOX
+					| material == Material.GRAY_SHULKER_BOX
+					| material == Material.LIGHT_GRAY_SHULKER_BOX
+					| material == Material.CYAN_SHULKER_BOX
+					| material == Material.PURPLE_SHULKER_BOX
+					| material == Material.BLUE_SHULKER_BOX
+					| material == Material.BROWN_SHULKER_BOX
+					| material == Material.GREEN_SHULKER_BOX
+					| material == Material.RED_SHULKER_BOX
+					| material == Material.BLACK_SHULKER_BOX
+				)
+				{
+					return null;
+				}
+			}
 
             Supplier<String> supplier = claim.checkPermission(player, ClaimPermission.Build, new BlockPlaceEvent(block, block.getState(), block, new ItemStack(material), player, true, EquipmentSlot.HAND));
 
@@ -3553,6 +3578,31 @@ public class GriefPrevention extends JavaPlugin
         {
             //cache the claim for later reference
             playerData.lastClaim = claim;
+
+			if(block.getRelative(0,-1,0).getType() == Material.PURPLE_STAINED_GLASS){
+				if(
+					block.getType() == Material.SHULKER_BOX
+					| block.getType() == Material.WHITE_SHULKER_BOX
+					| block.getType() == Material.ORANGE_SHULKER_BOX
+					| block.getType() == Material.MAGENTA_SHULKER_BOX
+					| block.getType() == Material.LIGHT_BLUE_SHULKER_BOX
+					| block.getType() == Material.YELLOW_SHULKER_BOX
+					| block.getType() == Material.LIME_SHULKER_BOX
+					| block.getType() == Material.PINK_SHULKER_BOX
+					| block.getType() == Material.GRAY_SHULKER_BOX
+					| block.getType() == Material.LIGHT_GRAY_SHULKER_BOX
+					| block.getType() == Material.CYAN_SHULKER_BOX
+					| block.getType() == Material.PURPLE_SHULKER_BOX
+					| block.getType() == Material.BLUE_SHULKER_BOX
+					| block.getType() == Material.BROWN_SHULKER_BOX
+					| block.getType() == Material.GREEN_SHULKER_BOX
+					| block.getType() == Material.RED_SHULKER_BOX
+					| block.getType() == Material.BLACK_SHULKER_BOX
+				)
+				{
+					return null;
+				}
+			}
 
             //if not in the wilderness, then apply claim rules (permissions, etc)
             Supplier<String> cancel = claim.checkPermission(player, ClaimPermission.Build, breakEvent);
