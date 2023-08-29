@@ -36,6 +36,10 @@ public enum ClaimPermission
      */
     Inventory(Messages.NoContainersPermission),
     /**
+     * ClaimPermission used for attacking mobs.
+     */
+    Creatures(Messages.NoCreaturesPermission),
+    /**
      * ClaimPermission used for basic access.
      */
     Access(Messages.NoAccessPermission),
