@@ -581,7 +581,6 @@ public class EntityDamageHandler implements Listener
         EntityType entityType = event.getEntityType();
         if (entityType != EntityType.ITEM_FRAME
                 && entityType != EntityType.GLOW_ITEM_FRAME
-                && entityType != EntityType.ARMOR_STAND
                 && entityType != EntityType.VILLAGER
                 && entityType != EntityType.ENDER_CRYSTAL)
         {
